@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.net.ServerSocket;
 
 @SpringBootApplication
-public class AhorcadoFinal1Application {
+public class AhorcadoFinal1Application implements CommandLineRunner{
 
     public static void main(String[] args) {
         int port = 8080;
@@ -25,7 +25,7 @@ public class AhorcadoFinal1Application {
             System.out.println("No hay puertos disponibles entre 8080 y 8090. Saliendo...");
             System.exit(1);
         }
-        SpringApplication.run(AhorcadoApplication.class, args);
+        SpringApplication.run(AhorcadoFinal1Application.class, args);
     }
 
     private static boolean isPortAvailable(int port) {
@@ -36,9 +36,9 @@ public class AhorcadoFinal1Application {
         }
     }
 
-
     @Override
     public void run(String... args) throws Exception {
         System.out.println("*-*-*-API Camila esta funcioando-*-*-*");
     }
+
 }
