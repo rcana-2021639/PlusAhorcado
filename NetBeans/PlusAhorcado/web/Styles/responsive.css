@@ -1,0 +1,246 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 20/09/2025, 18:43:38
+    Author     : Usuario
+*/
+
+/* Estilos base responsivos */
+:root {
+    --container-padding: 20px;
+    --window-gap: 20px;
+}
+
+/* Media queries para diferentes tamaños de pantalla */
+/* Pantallas extra grandes (>=1400px) */
+@media (min-width: 1400px) {
+    .game-container {
+        max-width: 1320px;
+        padding: var(--container-padding);
+    }
+}
+
+/* Pantallas grandes (>=1200px) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .game-container {
+        max-width: 1140px;
+        padding: var(--container-padding);
+    }
+}
+
+/* Pantallas medianas (>=992px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .game-container {
+        max-width: 960px;
+        padding: var(--container-padding);
+    }
+    
+    .timer-hint-container {
+        gap: 15px;
+    }
+}
+
+/* Tablets (>=768px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .game-container {
+        max-width: 720px;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .timer-hint-container {
+        gap: 10px;
+    }
+
+    .window-title {
+        font-size: 12px;
+    }
+
+    .control-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .game-button {
+        min-width: 120px;
+    }
+
+    .keyboard-row {
+        gap: 5px;
+    }
+
+    .key {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+}
+
+/* Móviles grandes (>=576px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .game-container {
+        max-width: 540px;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .timer-hint-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .cronometro-window,
+    .pista-window {
+        min-height: 80px;
+    }
+
+    .pista-content {
+        font-size: 14px;
+        padding: 10px;
+        max-height: 100px;
+        overflow-y: auto;
+    }
+
+    .control-buttons {
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    .game-button {
+        width: 100%;
+    }
+
+    .keyboard {
+        transform: scale(0.9);
+    }
+}
+
+/* Móviles pequeños (<576px) */
+@media (max-width: 575px) {
+    .game-container {
+        padding: 8px;
+        gap: 8px;
+    }
+
+    .timer-hint-container {
+        flex-direction: column;
+    }
+
+    .window-title {
+        font-size: 11px;
+    }
+
+    .pista-content {
+        font-size: 13px;
+        padding: 8px;
+        max-height: 80px;
+        overflow-y: auto;
+    }
+
+    .keyboard {
+        transform: scale(0.8);
+        transform-origin: top center;
+    }
+
+    .control-buttons {
+        flex-direction: column;
+        gap: 6px;
+        width: 100%;
+        max-width: 180px;
+        margin: 0 auto;
+        bottom: 10px;
+    }
+
+    .game-button {
+        width: 100%;
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .letter-slot {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+    }
+}
+
+/* Orientación landscape en móviles */
+@media (max-height: 500px) and (orientation: landscape) {
+    .game-container {
+        height: auto;
+        min-height: 100vh;
+        padding: 10px;
+    }
+
+    .ahorcado-window {
+        height: 200px;
+    }
+
+    .timer-hint-container {
+        flex-direction: row;
+        height: 80px;
+    }
+
+    .keyboard {
+        transform: scale(0.7);
+    }
+
+    .control-buttons {
+        position: relative;
+        flex-direction: row;
+        justify-content: center;
+        padding: 5px;
+        gap: 5px;
+    }
+
+    .game-button {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+}
+
+/* Ajustes de altura */
+@media (max-height: 700px) {
+    .game-container {
+        gap: 10px;
+    }
+
+    .ahorcado-window {
+        height: 35vh;
+    }
+
+    .timer-hint-container {
+        height: 15vh;
+    }
+
+    .teclado-window {
+        height: 25vh;
+    }
+}
+
+/* Ajustes para dispositivos con notch */
+@supports (padding-top: env(safe-area-inset-top)) {
+    .game-container {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+    }
+}
+
+/* Ajustes de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
