@@ -1,15 +1,38 @@
+<%-- 
+    Document   : index
+    Created on : 2/09/2025, 15:07:36
+    Author     : Usuario
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido al Juego del Ahorcado</title>
+    <link rel="stylesheet" href="Styles/css2.css">
+    <link rel="stylesheet" href="Styles/login.css">
+</head>
+<body>
+    <video class="bg-video" autoplay muted loop playsinline>
+        <source src="Images/Login.mp4" type="video/mp4">
+        Tu navegador no soporta videos HTML5.
+    </video>
+    
+    <form class="login-container floating" id="loginForm" action="Validar" method="POST">
+        <fieldset>
+            <legend>Login</legend>
+            <div class="error-message" id="errorMessage" style="display: none;">
+                ${error != null ? error : ''}
+            </div>
+            <input type="email" name="txtCorreo" placeholder="Correo electrónico" required />
+            <input type="password" name="txtPassword" placeholder="Contraseña" required />
+            <input type="hidden" name="accion" value="Ingresar">
+            <button type="submit">Entrar</button>
+        </fieldset>
+    </form>
+
+    <script src="Scripts/login.js"></script>
+</body>
 </html>
